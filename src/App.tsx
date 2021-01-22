@@ -1,10 +1,11 @@
 import React from 'react';
-import SignIn from './pages/signIn';
 import GlobalStyle from './styles/global';
+
+import FirePage from './pages/firePage';
 
 const App: React.FC = () => (
   <>
-    <SignIn />
+    <FirePage />
     <GlobalStyle />
   </>
 );

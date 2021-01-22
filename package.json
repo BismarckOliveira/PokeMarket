@@ -1,5 +1,5 @@
 {
-  "name": "go-barber-web",
+  "name": "poke-market",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.1.6",
-    "@types/styled-components": "^5.1.5",
+    "@types/styled-components": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.1",
