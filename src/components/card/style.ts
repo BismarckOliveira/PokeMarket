@@ -23,4 +23,8 @@ export const Card = styled.div`
   img {
     width: 100%;
   }
+
+  p {
+    margin: 8px 0px 8px 0;
+  }
 `;

@@ -55,6 +55,8 @@ export const ContentCar = styled.div`
   height: 450px;
   border-radius: 5px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 
   div {
     display: flex;
@@ -88,7 +90,7 @@ export const ContentCar = styled.div`
     padding: 20px 80px;
     text-decoration: none;
     font-size: 16px;
-    display: block;
+
     width: 100%;
   }
 `;
