@@ -2,7 +2,7 @@ import React from 'react';
 import { ImSearch } from 'react-icons/im';
 import logoImg from '../../assets/logoImage.png';
 import { Container, Navigate } from './style';
-import Card from '../../components/card';
+import CardBox from '../../components/card';
 
 const FirePage: React.FC = () => {
   return (
@@ -16,7 +16,8 @@ const FirePage: React.FC = () => {
           </fieldset>
         </form>
       </Navigate>
-      <Card />
+      <CardBox />
+      <CardBox />
     </Container>
   );
 };

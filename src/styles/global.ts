@@ -33,6 +33,7 @@ fieldset, input
 {
  outline: none;
  border: none;
+ 
 }
 
 `;
