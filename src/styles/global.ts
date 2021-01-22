@@ -29,4 +29,10 @@ button {
   cursor: pointer;
 }
 
+fieldset, input
+{
+ outline: none;
+ border: none;
+}
+
 `;
