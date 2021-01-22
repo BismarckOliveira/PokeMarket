@@ -1,13 +1,26 @@
-import { makeStyles } from '@material-ui/core/styles';
+import styled from 'styled-components';
 
-export const useStyles = makeStyles({
-  cardStyle: {
-    maxWidth: 250,
-    marginTop: 24,
-    marginLeft: 24,
-  },
-  media: {
-    background: '#ff1744',
-    height: 180,
-  },
-});
+export const Container = styled.div`
+  display: flex;
+  max-width: 180px;
+  margin-top: 24px;
+  margin-left: 24px;
+  background: #ff1744;
+  height: 200px;
+  border-radius: 5px;
+  width: 112rem;
+`;
+
+export const Card = styled.div`
+  :hover {
+    opacity: 0.5;
+  }
+  :hover img {
+    transform: scale(1.1);
+  }
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+`;

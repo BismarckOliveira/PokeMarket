@@ -3,10 +3,11 @@ import { ImSearch } from 'react-icons/im';
 import logoImg from '../../assets/logoImage.png';
 import { Container, Navigate } from './style';
 import CardBox from '../../components/card';
+import CarShop from '../../components/carshop';
 
 const FirePage: React.FC = () => {
   return (
-    <Container>
+    <>
       <Navigate>
         <img src={logoImg} alt="Logo" />
         <form action="text">
@@ -16,9 +17,14 @@ const FirePage: React.FC = () => {
           </fieldset>
         </form>
       </Navigate>
-      <CardBox />
-      <CardBox />
-    </Container>
+      <Container>
+        <CardBox />
+        <CardBox />
+        <CardBox />
+        <CardBox />
+        <CarShop />
+      </Container>
+    </>
   );
 };
 

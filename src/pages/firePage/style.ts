@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
-
 export const Navigate = styled.div`
   padding: 8px 4px 8px 4px;
   background: #e52207;
@@ -36,4 +34,7 @@ export const Navigate = styled.div`
       fill: #e52207;
     }
   }
+`;
+export const Container = styled.div`
+  display: flex;
 `;

@@ -1,16 +1,20 @@
 import React from 'react';
-import { CardActionArea, Card, CardMedia } from '@material-ui/core';
-import { useStyles } from './style';
+import testeImg from '../../assets/testeImg.png';
+
+import { Container, Card } from './style';
 
 const CardBox: React.FC = () => {
-  const { cardStyle, media } = useStyles();
-
   return (
-    <Card className={cardStyle}>
-      <CardActionArea>
-        <CardMedia className={media} />
-      </CardActionArea>
-    </Card>
+    <>
+      <Container>
+        <Card>
+          <h1>Pikachu</h1>
+          <img src={testeImg} alt="PokemonImage" />
+          <p>R$ 10,00</p>
+        </Card>
+      </Container>
+      ;
+    </>
   );
 };
 
