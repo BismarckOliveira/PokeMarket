@@ -11,6 +11,8 @@ const CardBox: React.FC = () => {
           <h1>Pikachu</h1>
           <img src={testeImg} alt="PokemonImage" />
           <p>R$ 10,00</p>
+          <hr />
+          <button type="button">ADD</button>
         </Card>
       </Container>
       ;
