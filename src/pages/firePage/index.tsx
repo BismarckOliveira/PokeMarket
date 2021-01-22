@@ -1,9 +1,9 @@
 import React from 'react';
 import { ImSearch } from 'react-icons/im';
 import logoImg from '../../assets/logoImage.png';
-import { Container, Navigate } from './style';
+import testeImg from '../../assets/testeImg.png';
+import { Container, Navigate, ContentCard, ContentCar } from './style';
 import CardBox from '../../components/card';
-import CarShop from '../../components/carshop';
 
 const FirePage: React.FC = () => {
   return (
@@ -18,11 +18,33 @@ const FirePage: React.FC = () => {
         </form>
       </Navigate>
       <Container>
-        <CardBox />
-        <CardBox />
-        <CardBox />
-        <CardBox />
-        <CarShop />
+        <ContentCard>
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+          <CardBox />
+        </ContentCard>
+        <ContentCar>
+          <h1>Carrinho</h1>
+          <hr />
+          <div>
+            <div>
+              <img src={testeImg} alt="PokemonImage" />
+              <strong>Pikachu</strong>
+            </div>
+            <p>10,00</p>
+          </div>
+          <hr />
+          <div className="Total">
+            <h2>Total</h2>
+            <strong>100,00</strong>
+          </div>
+          <button type="button">Comprar</button>
+        </ContentCar>
       </Container>
     </>
   );

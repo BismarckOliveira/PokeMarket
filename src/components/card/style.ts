@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin-top: 24px;
   margin-left: 24px;
   background: #ff1744;
-  height: 200px;
+  max-height: 200px;
   border-radius: 5px;
   width: 112rem;
 `;
