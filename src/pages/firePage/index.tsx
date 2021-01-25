@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ImSearch } from 'react-icons/im';
 import logoImg from '../../assets/logoImage.png';
 import testeImg from '../../assets/testeImg.png';
 import { Container, Navigate, ContentCard, ContentCar } from './style';
 import CardBox from '../../components/card';
+import api from '../../services/api';
+
+interface PokemonProps {
+  name: string;
+}
 
 const FirePage: React.FC = () => {
+  const [pokemon, setPokemon] = useState<PokemonProps[]>([]);
+
+  useEffect(() => {
+    async function loadPokemon(): Promise<void> {
+      const response = await api.get('/pokemon');
+    }
+
+    loadPokemon();
+  }, []);
+
   return (
     <>
       <Navigate>

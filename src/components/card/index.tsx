@@ -12,7 +12,7 @@ const CardBox: React.FC = () => {
           <img src={testeImg} alt="PokemonImage" />
           <p>R$ 10,00</p>
           <hr />
-          <button type="button">ADD</button>
+          <button type="button">ADD+</button>
         </Card>
       </Container>
       ;
