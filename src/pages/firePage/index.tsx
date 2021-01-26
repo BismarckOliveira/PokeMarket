@@ -2,8 +2,15 @@ import React, { useState, FormEvent } from 'react';
 import { ImSearch } from 'react-icons/im';
 import logoImg from '../../assets/logoImage.png';
 import testeImg from '../../assets/testeImg.png';
-import { Container, Navigate, ContentCard, ContentCar } from './style';
-import CardBox from '../../components/card';
+import {
+  Container,
+  Navigate,
+  ContentCard,
+  ContentCar,
+  Card,
+  CardBox,
+} from './style';
+
 import api from '../../services/api';
 
 interface PokemonProps {
@@ -26,7 +33,7 @@ const FirePage: React.FC = () => {
 
     const pokemon = response.data;
 
-    setPokemon([...pokemons, pokemon]);
+    setPokemon([pokemon]);
   }
 
   return (
@@ -50,7 +57,15 @@ const FirePage: React.FC = () => {
       <Container>
         <ContentCard>
           {pokemons.map(pokemon => (
-            <CardBox key={pokemon.name} />
+            <CardBox key={pokemon.name}>
+              <Card>
+                <h1>{pokemon.name}</h1>
+                <img src={pokemon.sprites.front_default} alt="PokemonImage" />
+                <p>R$ 10,00</p>
+                <hr />
+                <button type="button">ADD+</button>
+              </Card>
+            </CardBox>
           ))}
         </ContentCard>
         <ContentCar>
