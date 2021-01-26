@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { ImSearch } from 'react-icons/im';
 import logoImg from '../../assets/logoImage.png';
 import testeImg from '../../assets/testeImg.png';
@@ -8,40 +8,50 @@ import api from '../../services/api';
 
 interface PokemonProps {
   name: string;
+  sprites: {
+    front_default: string;
+  };
 }
 
 const FirePage: React.FC = () => {
-  const [pokemon, setPokemon] = useState<PokemonProps[]>([]);
+  const [newList, setNewList] = useState('');
+  const [pokemons, setPokemon] = useState<PokemonProps[]>([]);
 
-  useEffect(() => {
-    async function loadPokemon(): Promise<void> {
-      const response = await api.get('/pokemon');
-    }
+  async function loadPokemon(event: FormEvent<HTMLFormElement>): Promise<void> {
+    event.preventDefault();
 
-    loadPokemon();
-  }, []);
+    const response = await api.get<PokemonProps>(`pokemon-form/${newList}`);
+
+    console.log(response.data);
+
+    const pokemon = response.data;
+
+    setPokemon([...pokemons, pokemon]);
+  }
 
   return (
     <>
       <Navigate>
         <img src={logoImg} alt="Logo" />
-        <form action="text">
+        <form onSubmit={loadPokemon} action="text">
           <fieldset>
-            <input type="text" />
-            <ImSearch type="button" />
+            <input
+              value={newList}
+              onChange={e => setNewList(e.target.value)}
+              placeholder="Digite o nome do pokemon"
+              type="text"
+            />
+            <button type="submit">
+              <ImSearch />
+            </button>
           </fieldset>
         </form>
       </Navigate>
       <Container>
         <ContentCard>
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
-          <CardBox />
+          {pokemons.map(pokemon => (
+            <CardBox key={pokemon.name} />
+          ))}
         </ContentCard>
         <ContentCar>
           <h1>Carrinho</h1>

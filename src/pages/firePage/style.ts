@@ -30,6 +30,11 @@ export const Navigate = styled.div`
       flex: 1;
     }
 
+    button {
+      border: none;
+      background: transparent;
+    }
+
     svg {
       margin-right: 1rem;
       fill: #2196f3;
