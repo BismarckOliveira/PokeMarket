@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 import { ImSearch } from 'react-icons/im';
 import logoImg from '../../assets/logoImage.png';
 import testeImg from '../../assets/testeImg.png';
@@ -72,10 +72,12 @@ const FirePage: React.FC = () => {
           <h1>Carrinho</h1>
           <hr />
           <div>
-            <div>
-              <img src={testeImg} alt="PokemonImage" />
-              <strong>Pikachu</strong>
-            </div>
+            {pokemons.map(pokemon => (
+              <div>
+                <img src={pokemon.sprites.front_default} alt="PokemonImage" />
+                <strong>{pokemon.name}</strong>
+              </div>
+            ))}
             <p>10,00</p>
           </div>
           <hr />

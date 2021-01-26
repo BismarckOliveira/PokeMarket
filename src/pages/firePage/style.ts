@@ -48,11 +48,11 @@ export const Container = styled.div`
 
 export const CardBox = styled.div`
   display: flex;
-  max-width: 250px;
+  max-width: 180px;
   margin-top: 30px;
-  margin-left: 5px;
+  margin-left: 12px;
   background: #ff1744;
-  height: 160px;
+  height: 250px;
   border-radius: 5px;
 `;
 
@@ -60,7 +60,7 @@ export const Card = styled.div`
   text-align: center;
 
   img {
-    width: 100%;
+    width: 180px;
     transition: 1s;
 
     &:hover {
@@ -95,7 +95,6 @@ export const ContentCard = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: space-between;
-  justify-content: center;
 `;
 
 export const ContentCar = styled.div`
