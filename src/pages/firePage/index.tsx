@@ -1,7 +1,7 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 import { ImSearch } from 'react-icons/im';
 import logoImg from '../../assets/logoImage.png';
-import testeImg from '../../assets/testeImg.png';
+
 import {
   Container,
   Navigate,
@@ -18,6 +18,7 @@ interface PokemonProps {
   sprites: {
     front_default: string;
   };
+  type: [{ type: { name: string } }];
 }
 
 const FirePage: React.FC = () => {
@@ -63,7 +64,7 @@ const FirePage: React.FC = () => {
                 <img src={pokemon.sprites.front_default} alt="PokemonImage" />
                 <p>R$ 10,00</p>
                 <hr />
-                <button type="button">ADD+</button>
+                <button type="submit">ADD+</button>
               </Card>
             </CardBox>
           ))}
