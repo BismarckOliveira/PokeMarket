@@ -1,41 +1,58 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 import { ImSearch } from 'react-icons/im';
+
 import logoImg from '../../assets/logoImage.png';
 
-import {
-  Container,
-  Navigate,
-  ContentCard,
-  ContentCar,
-  Card,
-  CardBox,
-} from './style';
+import { Container, Navigate, ContentCard, ContentCar } from './style';
 
 import api from '../../services/api';
+import PokeCard from '../../components/PokeCard';
 
-interface PokemonProps {
-  name: string;
+interface types {
+  type: {
+    name: string;
+  };
+}
+
+export interface PokemonProps {
+  order: number;
   sprites: {
     front_default: string;
   };
-  type: [{ type: { name: string } }];
+  name: string;
+  types: types[];
 }
 
 const FirePage: React.FC = () => {
   const [newList, setNewList] = useState('');
+
   const [pokemons, setPokemon] = useState<PokemonProps[]>([]);
 
   async function loadPokemon(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
 
-    const response = await api.get<PokemonProps>(`pokemon-form/${newList}`);
-
-    console.log(response.data);
+    const response = await api.get<PokemonProps>(`pokemon/${newList}`);
 
     const pokemon = response.data;
 
+    const type = pokemon.types.map(item => item.type.name);
+
+    if (type[0] === 'grass') {
+      console.log('pokemon de grama');
+    }
+
     setPokemon([pokemon]);
   }
+
+  useEffect(() => {
+    const reqPokemon = async () => {
+      const response = await api.get<PokemonProps>(`pokemon/2`);
+
+      const pokemon = response.data;
+    };
+
+    reqPokemon();
+  }, []);
 
   return (
     <>
@@ -46,7 +63,7 @@ const FirePage: React.FC = () => {
             <input
               value={newList}
               onChange={e => setNewList(e.target.value)}
-              placeholder="Digite o nome do pokemon"
+              placeholder="Digite o nome do pokemon ou seu numero da Pokedex"
               type="text"
             />
             <button type="submit">
@@ -57,24 +74,14 @@ const FirePage: React.FC = () => {
       </Navigate>
       <Container>
         <ContentCard>
-          {pokemons.map(pokemon => (
-            <CardBox key={pokemon.name}>
-              <Card>
-                <h1>{pokemon.name}</h1>
-                <img src={pokemon.sprites.front_default} alt="PokemonImage" />
-                <p>R$ 10,00</p>
-                <hr />
-                <button type="submit">ADD+</button>
-              </Card>
-            </CardBox>
-          ))}
+          <PokeCard list={pokemons} />
         </ContentCard>
         <ContentCar>
           <h1>Carrinho</h1>
           <hr />
           <div>
             {pokemons.map(pokemon => (
-              <div>
+              <div key={pokemon.order}>
                 <img src={pokemon.sprites.front_default} alt="PokemonImage" />
                 <strong>{pokemon.name}</strong>
               </div>
