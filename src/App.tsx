@@ -1,11 +1,14 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import GlobalStyle from './styles/global';
-
-import FirePage from './pages/firePage';
+import Routes from './routes';
 
 const App: React.FC = () => (
   <>
-    <FirePage />
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+
     <GlobalStyle />
   </>
 );

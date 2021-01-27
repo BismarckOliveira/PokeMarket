@@ -1,8 +1,11 @@
 import React, { useState, FormEvent } from 'react';
 import { ImSearch } from 'react-icons/im';
+
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logoImage.png';
+
 import { Container, Navigate, ContentCard, ContentCar } from './style';
+
 import api from '../../services/api';
 import PokeCard from '../../components/PokeCard';
 
@@ -21,7 +24,7 @@ export interface PokemonProps {
   types: types[];
 }
 
-const FirePage: React.FC = () => {
+const ThunderPage: React.FC = () => {
   const [newInput, setNewInput] = useState('');
 
   const [pokemons, setPokemon] = useState<PokemonProps[]>([]);
@@ -35,7 +38,7 @@ const FirePage: React.FC = () => {
 
     const type = pokemon.types.map(item => item.type.name);
 
-    if (type[0] === 'fire') {
+    if (type[0] === 'electric') {
       setPokemon([pokemon]);
     }
   }
@@ -57,7 +60,7 @@ const FirePage: React.FC = () => {
             </button>
           </fieldset>
         </form>
-        <Link to="/thunderPage">Loja Tipo Electrico</Link>
+        <Link to="/">Loja de Pokemons Tipo Fogo</Link>
       </Navigate>
       <Container>
         <ContentCard>
@@ -87,4 +90,4 @@ const FirePage: React.FC = () => {
   );
 };
 
-export default FirePage;
+export default ThunderPage;

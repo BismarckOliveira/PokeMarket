@@ -43,7 +43,7 @@ export const Navigate = styled.div`
   a {
     margin-left: 40px;
     text-decoration: none;
-    background-color: #ffeb3b;
+    background-color: #ff1744;
     border-radius: 5px;
     color: black;
     padding: 10px;
