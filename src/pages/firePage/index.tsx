@@ -1,4 +1,4 @@
-import React, { useState, FormEvent, useEffect } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { ImSearch } from 'react-icons/im';
 
 import logoImg from '../../assets/logoImage.png';
@@ -15,7 +15,7 @@ interface types {
 }
 
 export interface PokemonProps {
-  order: number;
+  id: number;
   sprites: {
     front_default: string;
   };
@@ -24,14 +24,14 @@ export interface PokemonProps {
 }
 
 const FirePage: React.FC = () => {
-  const [newList, setNewList] = useState('');
+  const [newInput, setNewInput] = useState('');
 
   const [pokemons, setPokemon] = useState<PokemonProps[]>([]);
 
   async function loadPokemon(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
 
-    const response = await api.get<PokemonProps>(`pokemon/${newList}`);
+    const response = await api.get<PokemonProps>(`pokemon/${newInput}`);
 
     const pokemon = response.data;
 
@@ -42,16 +42,6 @@ const FirePage: React.FC = () => {
     }
   }
 
-  useEffect(() => {
-    const reqPokemon = async () => {
-      const response = await api.get<PokemonProps>(`pokemon/2`);
-
-      const pokemon = response.data;
-    };
-
-    reqPokemon();
-  }, []);
-
   return (
     <>
       <Navigate>
@@ -59,8 +49,8 @@ const FirePage: React.FC = () => {
         <form onSubmit={loadPokemon} action="text">
           <fieldset>
             <input
-              value={newList}
-              onChange={e => setNewList(e.target.value)}
+              value={newInput}
+              onChange={e => setNewInput(e.target.value)}
               placeholder="Digite o nome do pokemon ou seu numero da Pokedex"
               type="text"
             />
@@ -79,7 +69,7 @@ const FirePage: React.FC = () => {
           <hr />
           <div>
             {pokemons.map(pokemon => (
-              <div key={pokemon.order}>
+              <div key={pokemon.id}>
                 <img src={pokemon.sprites.front_default} alt="PokemonImage" />
                 <strong>{pokemon.name}</strong>
               </div>

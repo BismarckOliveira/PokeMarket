@@ -9,6 +9,7 @@ export const CardBox = styled.div`
   background: #ff1744;
   height: 250px;
   border-radius: 5px;
+  margin-bottom: 5px;
 `;
 
 export const Card = styled.div`
