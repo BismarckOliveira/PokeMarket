@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { type } from 'os';
 import { CardBox, Card } from './styled';
 
 import { PokemonProps } from '../../pages/firePage';
@@ -17,6 +16,7 @@ const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
           <Card>
             <h1>{pokemon.name}</h1>
             <img src={pokemon.sprites.front_default} alt="PokemonImage" />
+            <p>{pokemon.types[0].type.name}</p>
             <p>10,00</p>
             <hr />
             <button type="submit">ADD+</button>

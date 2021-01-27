@@ -37,11 +37,9 @@ const FirePage: React.FC = () => {
 
     const type = pokemon.types.map(item => item.type.name);
 
-    if (type[0] === 'grass') {
-      console.log('pokemon de grama');
+    if (type[0] === 'fire') {
+      setPokemon([pokemon]);
     }
-
-    setPokemon([pokemon]);
   }
 
   useEffect(() => {
