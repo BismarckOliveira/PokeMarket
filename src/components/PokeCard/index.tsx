@@ -3,42 +3,47 @@ import api from '../../services/api';
 
 import { CardBox, Card } from './styled';
 
-import { PokemonProps } from '../../pages/firePage';
+interface types {
+  type: {
+    name: string;
+  };
+}
+
+export interface PokemonProps {
+  id: number;
+  sprites: {
+    front_default: string;
+  };
+  name: string;
+  types: types[];
+}
 
 interface ListPokemonProps {
   list: PokemonProps[];
 }
 
-const PokeCard: React.FC<ListPokemonProps> = () => {
-  const [pokemons, setPokemon] = useState<PokemonProps[]>([]);
-  const [list, setlist] = useState(1);
-  useEffect(() => {
-    const reqPokemon = async () => {
-      const id = 1;
-      const response = await api.get<PokemonProps>(`pokemon/${list}`);
+const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
+  const [pokemons] = useState<PokemonProps[]>([]);
 
-      const pokemon = response.data;
-
-      const type = pokemon.types.map(item => item.type.name);
-
-      if (type[0] === 'fire') {
-        setPokemon([...pokemons, pokemon]);
-      }
-      setlist(id + pokemon.id);
+  const getRandomAmount = () => {
+    const money = Math.random() * 80;
+    const cents = Math.random() * 30;
+    const ceil = (value: number) => {
+      return Math.ceil(value);
     };
-
-    reqPokemon();
-  }, [list]);
+    const value = `${ceil(money)},${ceil(cents)}`;
+    console.log(value);
+    return value;
+  };
 
   return (
     <>
-      {pokemons.map(pokemon => (
+      {list.map(pokemon => (
         <CardBox key={pokemon.id}>
           <Card>
             <h1>{pokemon.name}</h1>
             <img src={pokemon.sprites.front_default} alt="PokemonImage" />
-            <p>{pokemon.types[0].type.name}</p>
-            <p>10,00</p>
+            <p>R$ {getRandomAmount()}</p>
             <hr />
             <button type="submit">ADD+</button>
           </Card>

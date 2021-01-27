@@ -6,7 +6,7 @@ export const CardBox = styled.div`
   max-width: 180px;
   margin-top: 30px;
   margin-left: 12px;
-  background: #ff1744;
+  background: #2196f3;
   height: 250px;
   border-radius: 5px;
   margin-bottom: 5px;
@@ -22,6 +22,9 @@ export const Card = styled.div`
     &:hover {
       transform: scale(1.1);
     }
+  }
+  p {
+    font-size: medium;
   }
 
   hr {

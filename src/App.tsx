@@ -7,9 +7,9 @@ const App: React.FC = () => (
   <>
     <BrowserRouter>
       <Routes />
-    </BrowserRouter>
 
-    <GlobalStyle />
+      <GlobalStyle />
+    </BrowserRouter>
   </>
 );
 export default App;

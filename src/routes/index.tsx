@@ -8,7 +8,7 @@ const Routes: React.FC = () => {
   return (
     <Switch>
       <Route path="/" exact component={Firepage} />
-      <Route path="/Thuderpage" component={ThunderPage} />
+      <Route path="/thunder" component={ThunderPage} />
     </Switch>
   );
 };
