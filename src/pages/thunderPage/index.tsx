@@ -40,11 +40,14 @@ const ThunderPage: React.FC = () => {
 
     const pokemon = response.data;
 
-    const type = pokemon.types.map(item => item.type.name);
-
-    if (type[0] === 'electric') {
-      setPokemon([pokemon]);
-    } else alert('Este pokemon não é do tipo Eletrico');
+    try {
+      const type = pokemon.types.map(item => item.type.name);
+      if (type[0] === 'electric') {
+        setPokemon([pokemon]);
+      } else alert('Este pokemon não é do tipo Eletrico');
+    } catch (error) {
+      alert('Pesquisa vazia');
+    }
   }
 
   return (

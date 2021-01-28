@@ -40,11 +40,15 @@ const FirePage: React.FC = () => {
 
     const pokemon = response.data;
 
-    const type = pokemon.types.map(item => item.type.name);
+    try {
+      const type = pokemon.types.map(item => item.type.name);
 
-    if (type[0] === 'fire') {
-      setPokemon([pokemon]);
-    } else alert('Este pokemon não é do tipo Fogo');
+      if (type[0] === 'fire') {
+        setPokemon([pokemon]);
+      } else alert('Este pokemon não é do tipo Fogo');
+    } catch (error) {
+      alert('Pesquisa vazia');
+    }
   }
 
   return (
