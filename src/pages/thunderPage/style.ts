@@ -53,41 +53,40 @@ export const Navigate = styled.div`
       color: black;
       padding: 10px;
     }
-    @media screen and (max-width: 480px) {
-      div {
-        display: block;
-        margin: 0 auto;
-        width: 50%;
+  }
+  @media screen and (max-width: 480px) {
+    div {
+      display: block;
+      margin: 0 auto;
+      width: 50%;
 
-        img {
-          margin-left: 0;
-          margin-bottom: 5px;
+      img {
+        margin-left: 0;
+        margin-bottom: 5px;
+      }
+
+      form {
+        fieldset,
+        input {
+          border-radius: 5px;
         }
 
-        form {
-          fieldset,
-          input {
-            border-radius: 5px;
-          }
-
-          fieldset {
-            width: 28vh;
-            height: 3.6vh;
-          }
-
-          input {
-            width: auto;
-            height: 15px;
-          }
+        fieldset {
+          width: 28vh;
+          height: 3.6vh;
         }
 
-        .lojas {
-          position: absolute;
-          top: 0;
-          left: 0;
-          margin: 0;
-          font-size: 8px;
+        input {
+          width: auto;
+          height: 15px;
         }
+      }
+      .lojas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        font-size: 8px;
       }
     }
   }
