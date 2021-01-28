@@ -24,7 +24,7 @@ const ThunderPage: React.FC = () => {
 
       const type = pokemon.types.map(item => item.type.name);
 
-      if (type[0] === 'electric' && pokemon.id <= 150) {
+      if (type[0] === 'electric' && pokemon.id <= 135) {
         setPokemon([...pokemons, pokemon]);
       }
       setlist(id + pokemon.id);
@@ -53,7 +53,7 @@ const ThunderPage: React.FC = () => {
   return (
     <>
       <Navigate>
-        <Link to="/">
+        <Link to="/thunder">
           <img src={logoImg} alt="Logo" />
         </Link>
         <form onSubmit={loadPokemon} action="text">
@@ -69,7 +69,7 @@ const ThunderPage: React.FC = () => {
             </button>
           </fieldset>
         </form>
-        <Link className="lojas" to="/thunder">
+        <Link className="lojas" to="/">
           Loja Tipo Fogo
         </Link>
       </Navigate>

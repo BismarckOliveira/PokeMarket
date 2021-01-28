@@ -24,7 +24,7 @@ const FirePage: React.FC = () => {
 
       const type = pokemon.types.map(item => item.type.name);
 
-      if (type[0] === 'fire' && pokemon.id <= 150) {
+      if (type[0] === 'fire' && pokemon.id <= 77) {
         setPokemon([...pokemons, pokemon]);
       }
 
