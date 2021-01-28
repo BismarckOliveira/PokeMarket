@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../services/api';
+import React from 'react';
 
 import { CardBox, Card } from './styled';
 
@@ -23,8 +22,6 @@ interface ListPokemonProps {
 }
 
 const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
-  const [pokemons] = useState<PokemonProps[]>([]);
-
   const getRandomAmount = () => {
     const money = Math.random() * 80;
     const cents = Math.random() * 30;
@@ -32,20 +29,28 @@ const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
       return Math.ceil(value);
     };
     const value = `${ceil(money)},${ceil(cents)}`;
-    console.log(value);
+
     return value;
   };
+
+  function addCarrinho() {
+    const value = document.querySelector('.value');
+
+    console.log(value);
+  }
 
   return (
     <>
       {list.map(pokemon => (
         <CardBox key={pokemon.id}>
           <Card>
-            <h1>{pokemon.name}</h1>
+            <h1 className="name">{pokemon.name}</h1>
             <img src={pokemon.sprites.front_default} alt="PokemonImage" />
-            <p>R$ {getRandomAmount()}</p>
+            <p className="value">R$ {getRandomAmount()}</p>
             <hr />
-            <button type="submit">ADD+</button>
+            <button onClick={addCarrinho} className="add" type="button">
+              ADD+
+            </button>
           </Card>
         </CardBox>
       ))}
