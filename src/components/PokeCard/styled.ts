@@ -48,4 +48,8 @@ export const Card = styled.div`
       background-color: ${shade(0.2, '#ff1744')};
     }
   }
+
+  @media screen and (max-width: 480px) {
+    margin: 0 auto;
+  }
 `;

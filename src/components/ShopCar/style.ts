@@ -30,7 +30,7 @@ export const Container = styled.div`
   hr {
     margin: 5px 0px 5px 0px;
     border: 0;
-    border-top: 1px dashed #ccc;
+    border-top: 1px dashed #aaaa;
   }
 
   .Total {
@@ -52,5 +52,10 @@ export const Container = styled.div`
     &:hover {
       background-color: ${shade(0.2, '#2196f3')};
     }
+  }
+  @media screen and (max-width: 480px) {
+    width: 100%;
+    height: 50%;
+    margin: 25px 0 0 0;
   }
 `;

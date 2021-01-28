@@ -98,6 +98,7 @@ export const Container = styled.div`
   justify-content: space-between;
 
   @media screen and (max-width: 480px) {
+    display: block;
   }
 `;
 

@@ -92,7 +92,7 @@ export const Navigate = styled.div`
   }
 `;
 export const Container = styled.div`
-  display: flex;
+  display: block;
   @media screen and (max-width: 480px) {
   }
 `;

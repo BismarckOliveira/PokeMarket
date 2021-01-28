@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Container } from './style';
-import { PokemonProps } from '../PokeCard';
 
 const ShopCar: React.FC = () => {
   return (
