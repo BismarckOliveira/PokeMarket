@@ -39,7 +39,7 @@ export const Navigate = styled.div`
       fill: #2196f3;
     }
   }
-  a {
+  .lojas {
     margin-left: 40px;
     text-decoration: none;
     background-color: #ff1744;

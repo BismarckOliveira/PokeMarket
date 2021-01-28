@@ -53,7 +53,9 @@ const ThunderPage: React.FC = () => {
   return (
     <>
       <Navigate>
-        <img src={logoImg} alt="Logo" />
+        <Link to="/">
+          <img src={logoImg} alt="Logo" />
+        </Link>
         <form onSubmit={loadPokemon} action="text">
           <fieldset>
             <input
@@ -67,7 +69,9 @@ const ThunderPage: React.FC = () => {
             </button>
           </fieldset>
         </form>
-        <Link to="/">Loja Tipo Fogo</Link>
+        <Link className="lojas" to="/thunder">
+          Loja Tipo Fogo
+        </Link>
       </Navigate>
       <Container>
         <ContentCard>

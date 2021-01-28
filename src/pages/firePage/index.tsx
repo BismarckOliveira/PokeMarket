@@ -55,7 +55,10 @@ const FirePage: React.FC = () => {
   return (
     <>
       <Navigate>
-        <img src={logoImg} alt="Logo" />
+        <Link to="/">
+          <img src={logoImg} alt="Logo" />
+        </Link>
+
         <form onSubmit={loadPokemon} action="text">
           <fieldset>
             <input
@@ -69,7 +72,9 @@ const FirePage: React.FC = () => {
             </button>
           </fieldset>
         </form>
-        <Link to="/thunder">Loja Tipo Electrico</Link>
+        <Link className="lojas" to="/thunder">
+          Loja Tipo Electrico
+        </Link>
       </Navigate>
       <Container>
         <ContentCard>
