@@ -1,3 +1,11 @@
+# MVP Loja Pokemon 
+ 
+Implementado 
+- Catálogo de produtos
+- Barra de busca para filtrar os Pokémon
+- 2 lojas com estilos e tipos diferentes de Pokémon
+- Tratativa de rotas por loja
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
