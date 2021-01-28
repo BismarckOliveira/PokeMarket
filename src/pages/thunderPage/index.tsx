@@ -53,25 +53,27 @@ const ThunderPage: React.FC = () => {
   return (
     <>
       <Navigate>
-        <Link to="/thunder">
-          <img src={logoImg} alt="Logo" />
-        </Link>
-        <form onSubmit={loadPokemon} action="text">
-          <fieldset>
-            <input
-              value={newInput}
-              onChange={e => setNewInput(e.target.value)}
-              placeholder="Digite o nome do pokemon ou seu numero da Pokedex"
-              type="text"
-            />
-            <button type="submit">
-              <ImSearch />
-            </button>
-          </fieldset>
-        </form>
-        <Link className="lojas" to="/">
-          Loja Tipo Fogo
-        </Link>
+        <div>
+          <Link to="/thunder">
+            <img src={logoImg} alt="Logo" />
+          </Link>
+          <form onSubmit={loadPokemon} action="text">
+            <fieldset>
+              <input
+                value={newInput}
+                onChange={e => setNewInput(e.target.value)}
+                placeholder="Digite o nome do pokemon ou seu numero da Pokedex"
+                type="text"
+              />
+              <button type="submit">
+                <ImSearch />
+              </button>
+            </fieldset>
+          </form>
+          <Link className="lojas" to="/">
+            Loja Tipo Fogo
+          </Link>
+        </div>
       </Navigate>
       <Container>
         <ContentCard>

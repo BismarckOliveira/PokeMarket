@@ -1,6 +1,6 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 import { ImSearch } from 'react-icons/im';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logoImage.png';
 import { Container, Navigate, ContentCard } from './style';
 import ShopCar from '../../components/ShopCar';
@@ -55,26 +55,27 @@ const FirePage: React.FC = () => {
   return (
     <>
       <Navigate>
-        <Link to="/">
-          <img src={logoImg} alt="Logo" />
-        </Link>
-
-        <form onSubmit={loadPokemon} action="text">
-          <fieldset>
-            <input
-              value={newInput}
-              onChange={e => setNewInput(e.target.value)}
-              placeholder="Digite o nome do pokemon ou seu numero da Pokedex"
-              type="text"
-            />
-            <button type="submit">
-              <ImSearch />
-            </button>
-          </fieldset>
-        </form>
-        <Link className="lojas" to="/thunder">
-          Loja Tipo Electrico
-        </Link>
+        <div>
+          <Link to="/">
+            <img src={logoImg} alt="Logo" />
+          </Link>
+          <form onSubmit={loadPokemon} action="text">
+            <fieldset>
+              <input
+                value={newInput}
+                onChange={e => setNewInput(e.target.value)}
+                placeholder="Digite o nome do pokemon ou seu numero da Pokedex"
+                type="text"
+              />
+              <button type="submit">
+                <ImSearch />
+              </button>
+            </fieldset>
+          </form>
+          <Link className="lojas" to="/thunder">
+            Loja Tipo Electrico
+          </Link>
+        </div>
       </Navigate>
       <Container>
         <ContentCard>

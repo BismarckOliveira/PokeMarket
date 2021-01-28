@@ -7,49 +7,95 @@ export const Navigate = styled.div`
   align-items: center;
   max-height: 250px;
 
-  img {
-    margin-left: 1rem;
-    width: 200px;
-  }
+  div {
+    display: flex;
+    align-items: center;
 
-  form {
-    margin-left: 6rem;
-    fieldset,
-    input {
+    img {
+      margin-left: 1rem;
+      width: 200px;
+    }
+
+    form {
+      fieldset,
+      input {
+        border-radius: 5px;
+      }
+
+      fieldset {
+        background: #fff;
+        text-align: center;
+
+        button {
+          text-align: center;
+          flex: 1;
+          border: none;
+          background: transparent;
+        }
+      }
+
+      input {
+        max-width: 450px;
+        height: 50px;
+        flex: 1;
+      }
+
+      svg {
+        margin-right: 1rem;
+        fill: #2196f3;
+      }
+    }
+    .lojas {
+      margin-left: 40px;
+      text-decoration: none;
+      background-color: #ff1744;
       border-radius: 5px;
+      color: black;
+      padding: 10px;
     }
+    @media screen and (max-width: 480px) {
+      div {
+        display: block;
+        margin: 0 auto;
+        width: 50%;
 
-    fieldset {
-      background: #fff;
-    }
+        img {
+          margin-left: 0;
+          margin-bottom: 5px;
+        }
 
-    input {
-      width: 700px;
-      height: 50px;
-      flex: 1;
-    }
+        form {
+          fieldset,
+          input {
+            border-radius: 5px;
+          }
 
-    button {
-      border: none;
-      background: transparent;
-    }
+          fieldset {
+            width: 28vh;
+            height: 3.6vh;
+          }
 
-    svg {
-      margin-right: 1rem;
-      fill: #2196f3;
+          input {
+            width: auto;
+            height: 15px;
+          }
+        }
+
+        .lojas {
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin: 0;
+          font-size: 8px;
+        }
+      }
     }
-  }
-  .lojas {
-    margin-left: 40px;
-    text-decoration: none;
-    background-color: #ff1744;
-    border-radius: 5px;
-    color: black;
-    padding: 10px;
   }
 `;
 export const Container = styled.div`
   display: flex;
+  @media screen and (max-width: 480px) {
+  }
 `;
 
 export const ContentCard = styled.div`
