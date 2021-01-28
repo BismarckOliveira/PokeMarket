@@ -50,6 +50,7 @@ export const Navigate = styled.div`
 `;
 export const Container = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 export const ContentCard = styled.div`
