@@ -1,6 +1,6 @@
 import React, { useState, FormEvent, useEffect } from 'react';
 import { ImSearch } from 'react-icons/im';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import logoImg from '../../assets/logoImage.png';
 import { Container, Navigate, ContentCard } from './style';
 import ShopCar from '../../components/ShopCar';
@@ -17,13 +17,14 @@ const FirePage: React.FC = () => {
   useEffect(() => {
     const reqPokemon = async () => {
       const id = 1;
+
       const response = await api.get<PokemonProps>(`pokemon/${list}`);
 
       const pokemon = response.data;
 
       const type = pokemon.types.map(item => item.type.name);
 
-      if (type[0] === 'fire') {
+      if (type[0] === 'fire' && pokemon.id <= 150) {
         setPokemon([...pokemons, pokemon]);
       }
 

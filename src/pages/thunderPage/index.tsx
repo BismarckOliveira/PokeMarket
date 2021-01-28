@@ -24,7 +24,7 @@ const ThunderPage: React.FC = () => {
 
       const type = pokemon.types.map(item => item.type.name);
 
-      if (type[0] === 'electric') {
+      if (type[0] === 'electric' && pokemon.id <= 150) {
         setPokemon([...pokemons, pokemon]);
       }
       setlist(id + pokemon.id);

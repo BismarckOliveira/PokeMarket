@@ -33,12 +33,6 @@ const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
     return value;
   };
 
-  function addCarrinho() {
-    const value = document.querySelector('.value');
-
-    console.log(value);
-  }
-
   return (
     <>
       {list.map(pokemon => (
@@ -48,7 +42,7 @@ const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
             <img src={pokemon.sprites.front_default} alt="PokemonImage" />
             <p className="value">R$ {getRandomAmount()}</p>
             <hr />
-            <button onClick={addCarrinho} className="add" type="button">
+            <button className="add" type="button">
               ADD+
             </button>
           </Card>
