@@ -9,11 +9,12 @@ const ShopCar: React.FC = () => {
         <h1>Carrinho</h1>
         <hr />
         <div>
-          <div>
-            <img src="ds" alt="PokemonImage" />
-            <strong>teste</strong>
-          </div>
-          <p>10,00</p>
+          <ul className="itens">
+            <li>
+              <strong>teste</strong>
+              <p>10,00</p>
+            </li>
+          </ul>
         </div>
         <hr />
         <div className="Total">

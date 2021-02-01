@@ -14,13 +14,16 @@ export const Container = styled.div`
   flex-direction: column;
 
   div {
-    display: flex;
     align-items: center;
     justify-content: space-between;
-    img {
-      margin-left: 5px;
-      height: 40px;
+    color: black;
+
+    .itens li {
+      display: flex;
+
+      justify-content: space-between;
     }
+
     p {
       font-size: 16px;
       margin-right: 10px;
