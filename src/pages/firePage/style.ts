@@ -100,4 +100,7 @@ export const ContentCard = styled.div`
   display: flex;
   max-width: 120vh;
   flex-wrap: wrap;
+  @media screen and (max-width: 480px) {
+    justify-content: center;
+  }
 `;
