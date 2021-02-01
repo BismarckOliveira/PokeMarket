@@ -32,7 +32,7 @@ export const Navigate = styled.div`
     }
 
     input {
-      max-width: 450px;
+      width: 450px;
       height: 50px;
       flex: 1;
     }
