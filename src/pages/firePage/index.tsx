@@ -55,27 +55,25 @@ const FirePage: React.FC = () => {
   return (
     <>
       <Navigate>
-        <div>
-          <Link to="/">
-            <img src={logoImg} alt="Logo" />
-          </Link>
-          <form onSubmit={loadPokemon} action="text">
-            <fieldset>
-              <input
-                value={newInput}
-                onChange={e => setNewInput(e.target.value)}
-                placeholder="Digite o nome do pokemon ou seu numero da Pokedex"
-                type="text"
-              />
-              <button type="submit">
-                <ImSearch />
-              </button>
-            </fieldset>
-          </form>
-          <Link className="lojas" to="/thunder">
-            Loja Tipo Electrico
-          </Link>
-        </div>
+        <Link to="/">
+          <img src={logoImg} alt="Logo" />
+        </Link>
+        <form onSubmit={loadPokemon} action="text">
+          <fieldset>
+            <input
+              value={newInput}
+              onChange={e => setNewInput(e.target.value)}
+              placeholder="Digite o nome do pokemon ou seu numero da Pokedex"
+              type="text"
+            />
+            <button type="submit">
+              <ImSearch />
+            </button>
+          </fieldset>
+        </form>
+        <Link className="lojas" to="/thunder">
+          Loja Tipo Electrico
+        </Link>
       </Navigate>
       <Container>
         <ContentCard>
