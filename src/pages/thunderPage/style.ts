@@ -42,13 +42,13 @@ export const Navigate = styled.div`
     }
   }
   .lojas {
-    margin-left: 40px;
     text-decoration: none;
     background-color: #ff1744;
     border-radius: 5px;
     color: black;
     padding: 10px;
     width: 130px;
+    text-align: center;
   }
 
   @media screen and (max-width: 480px) {
@@ -79,11 +79,7 @@ export const Navigate = styled.div`
     }
 
     .lojas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 0;
-      font-size: 8px;
+      margin-top: 8px;
     }
   }
 `;
