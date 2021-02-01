@@ -88,8 +88,10 @@ export const Navigate = styled.div`
   }
 `;
 export const Container = styled.div`
-  display: block;
+  display: flex;
+  justify-content: space-between;
   @media screen and (max-width: 480px) {
+    flex-direction: column;
   }
 `;
 
