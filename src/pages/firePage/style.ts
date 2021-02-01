@@ -5,11 +5,10 @@ export const Navigate = styled.div`
   background: #2196f3;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   max-height: 250px;
 
   img {
-    margin-left: 1rem;
     width: 200px;
   }
 
@@ -49,6 +48,7 @@ export const Navigate = styled.div`
     border-radius: 5px;
     color: black;
     padding: 10px;
+    width: 130px;
   }
 
   @media screen and (max-width: 480px) {
