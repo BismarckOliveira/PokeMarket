@@ -9,6 +9,8 @@ export default createGlobalStyle`
   outline: 0;
 }
 
+
+
 body {
   background:  #f0f0f0;
   color: #fff;

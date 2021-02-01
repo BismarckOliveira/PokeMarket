@@ -13,6 +13,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  h1 {
+    color: black;
+  }
   div {
     align-items: center;
     justify-content: space-between;
