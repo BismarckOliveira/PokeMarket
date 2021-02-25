@@ -86,7 +86,8 @@ export const Navigate = styled.div`
 `;
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (max-width: 480px) {
     flex-direction: column;

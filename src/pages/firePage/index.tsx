@@ -3,7 +3,6 @@ import { ImSearch } from 'react-icons/im';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logoImage.png';
 import { Container, Navigate, ContentCard } from './style';
-import ShopCar from '../../components/ShopCar';
 import api from '../../services/api';
 import PokeCard, { PokemonProps } from '../../components/PokeCard';
 
@@ -79,7 +78,6 @@ const FirePage: React.FC = () => {
         <ContentCard>
           <PokeCard list={pokemons} />
         </ContentCard>
-        <ShopCar />
       </Container>
     </>
   );

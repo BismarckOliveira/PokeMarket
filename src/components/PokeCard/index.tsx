@@ -15,6 +15,8 @@ export interface PokemonProps {
   };
   name: string;
   types: types[];
+  quantity: number;
+  value: number;
 }
 
 interface ListPokemonProps {
@@ -40,12 +42,15 @@ const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
           <Card>
             <h1 className="name">{pokemon.name}</h1>
             <img src={pokemon.sprites.front_default} alt="PokemonImage" />
-            <p className="value">R$ {getRandomAmount()}</p>
-            <hr />
-            <button className="add" type="button">
-              ADD+
-            </button>
+            <div>
+              <p>R$</p>
+              <p id="valor"> {getRandomAmount()}</p>
+            </div>
           </Card>
+          <hr />
+          <button className="add" type="button">
+            ADD+
+          </button>
         </CardBox>
       ))}
     </>
