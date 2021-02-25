@@ -24,13 +24,12 @@ interface ListPokemonProps {
 }
 
 const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
-  const getRandomAmount = () => {
+  const getRandomAmount = (): number => {
     const money = Math.random() * 80;
-    const cents = Math.random() * 30;
     const ceil = (value: number) => {
       return Math.ceil(value);
     };
-    const value = `${ceil(money)},${ceil(cents)}`;
+    const value = ceil(money);
 
     return value;
   };
@@ -44,7 +43,7 @@ const PokeCard: React.FC<ListPokemonProps> = ({ list }: ListPokemonProps) => {
             <img src={pokemon.sprites.front_default} alt="PokemonImage" />
             <div>
               <p>R$</p>
-              <p id="valor"> {getRandomAmount()}</p>
+              <p id="valor">{getRandomAmount()}</p>
             </div>
           </Card>
           <hr />
